@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class priorityCheck {
+public class PriorityCheck {
 
     private static final Map<String, Integer> priorityCheck = Stream.of(
             new AbstractMap.SimpleImmutableEntry<>("+",1),
@@ -15,7 +15,7 @@ public class priorityCheck {
     ).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
 
-    public static int check (String op) throws Exception {
+    static int check (String op) throws Exception {
         if (priorityCheck.containsKey(op)){
             return priorityCheck.get(op);
         }else
